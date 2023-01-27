@@ -5,6 +5,10 @@ Introduction to Bioinformatic skills lectures:
 __Lecture 1 and 2.__ Introduction to unix following ["Unix and Perl Primer for Biologists
 " by Dr. Ian Korf](http://korflab.ucdavis.edu/Unix_and_Perl/current.html#part1)
 
+  
+  *__Installing WSL (Linux) for Windows computers__* [WSL Subsystem](Lecture_1-2/Linux_on_PC.md)
+  
+  
 __Lecture 3.__ Using AHPCC and using NCBI database
 
 __Lecture 4.__ Accessing AHPCC modules and using conda
