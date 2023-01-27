@@ -1,0 +1,23 @@
+---
+title: "Linux subsystem in Windows"
+format: html
+editor: visual
+---
+
+## Installing WSL
+
+Windows Subsystem for Linux (WSL) lets developers install a Linux distribution (such as Ubuntu, OpenSUSE, Kali, Debian, Arch Linux, etc) and use Linux applications, utilities, and Bash command-line tools directly on Windows.
+
+Open a powershell session in your pc or in your visual studio code on the terminal and run the following command to install WSL. Make sure that you run this as an administrator:
+
+    wsl --install
+
+Once, the WSL is installed. In your, visual studio code, install the following plug in:
+
+    vscode:extension/ms-vscode-remote.remote-wsl
+
+![](https://code.visualstudio.com/assets/docs/remote/wsl-tutorial/remote-wsl-extension.png)
+
+With the WSL extension installed, you will see a new Status bar item at the far left. The Remote Status bar item can quickly show you in which context VS Code is running (local or remote) and clicking on the item will bring up the WSL extension commands.
+
+![](https://code.visualstudio.com/assets/docs/remote/wsl-tutorial/remote-status-bar.png)
