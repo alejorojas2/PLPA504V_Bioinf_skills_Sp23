@@ -1,12 +1,67 @@
 ---
 title: "Lecture 4"
 author: "Alejandro Rojas"
-date: "2/11/2022"
 output: 
   html_document: 
     keep_md: yes
 ---
 
+
+
+## Modules at AHPCC
+
+When multiple versions of software are installed, some method is needed
+to use the version you want to use. The
+Modules package is the overwhelming
+choice of HPC centers for this. Modules is supplied on the system to
+manipulate the users's environment variables to run a choice of the
+needed programs and versions.
+
+
+The most important of these variables are `$PATH`, telling the system where to find executable files such as blast or bwa, and $LD_LIBRARY_PATH, telling the system where
+to find shared libraries that an executable calls and requires. 
+
+The four critical module commands are:
+ * list (currently loaded)
+ * avail (all available)
+ * load
+ * purge
+ 
+ Let's try module list to see what are the modules in use:
+ 
+ ```
+$ module list
+
+Currently Loaded Modules:
+  1) os/el7
+ ```
+
+Now, let's see the modules available to us:
+
+```
+$ module avail
+```
+
+If the avail list is too long consider trying:
+
+* `module --default avail` to just list the default modules.
+* `module overview` or "ml ov" to display the number of modules for each name.
+* Use `module spider` to find all possible modules and extensions.
+* Use `module keyword key1 key2 ...` to search for all possible modules matching any of the "keys".
+
+
+Now let's load blast:
+
+```
+$ module load blast
+```
+
+Try now to do `module list` to see what is available.
+
+
+## Conda
+
+We will follow this tutorial by Astrobiomike: [An introduction to conda](https://astrobiomike.github.io/unix/conda-intro)
 
 
 ## Installing Git
@@ -83,10 +138,8 @@ git remote add origin git@github.com:alejorojas2/Test.git
 git push -u origin main
 ```
 
+## How to set up SSH key for github
 
-## Conda
-
-We will follow this tutorial by Astrobiomike: [An introduction to conda](https://astrobiomike.github.io/unix/conda-intro)
 
 
 

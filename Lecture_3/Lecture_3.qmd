@@ -39,7 +39,7 @@ A few reminders:
 
 Access to AHPCC: [**https://pinnacle-portal.uark.edu/**](https://pinnacle-portal.uark.edu/)
 
-Use your university user before the \"\@uark.edu\"  and password
+Use your university user before the "\@uark.edu"  and password
 
 AHPCC wiki for help: [**https://hpcwiki.uark.edu/doku.php?id=start**](https://hpcwiki.uark.edu/doku.php?id=start)
 
@@ -53,7 +53,7 @@ Data that we will use in class will be available at this location:
 
 ### **NCBI Search tips:**
 
--   Fields for searching databases **<https://www.ncbi.nlm.nih.gov/books/NBK49540/>**
+-   Fields for searching databases [**https://www.ncbi.nlm.nih.gov/books/NBK49540/**](https://www.ncbi.nlm.nih.gov/books/NBK49540/){.uri}
 
 -   Genbank file example
 

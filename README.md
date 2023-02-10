@@ -9,7 +9,7 @@ __Lecture 1 and 2.__ Introduction to unix following ["Unix and Perl Primer for B
   *__Installing WSL (Linux) for Windows computers__* [WSL Subsystem](Lecture_1-2/Linux_on_PC.md)
   
   
-__Lecture 3.__ Using AHPCC and using NCBI database
+__Lecture 3.__ [Using AHPCC and using NCBI database](Lecture_3/Lecture_3.md)
 
 __Lecture 4.__ Accessing AHPCC modules and using conda
 
