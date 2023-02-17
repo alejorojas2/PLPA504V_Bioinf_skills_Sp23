@@ -1,7 +1,6 @@
 ---
 title: "Lecture 6"
 author: "Alejandro Rojas"
-date: "3/4/2022"
 output: 
   html_document: 
     keep_md: yes
