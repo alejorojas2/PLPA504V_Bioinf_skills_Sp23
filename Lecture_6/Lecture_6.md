@@ -70,7 +70,7 @@ A basic script in slurm looks like:
 #SBATCH --output=zzz.slurm
 #SBATCH --nodes=4
 #SBATCH --tasks-per-node=32
-$SBATCH --time=00:00:10
+#SBATCH --time=00:00:10
 #SBATCH --partition comp06
 module purge
 module load intel/14.0.3 mkl/14.0.3 fftw/3.3.6 impi/5.1.2
@@ -85,3 +85,64 @@ pinnacle-l1:$
 
 Link cheat sheet: https://www.chpc.utah.edu/presentations/SlurmCheatsheet.pdf
 
+## Writing your first SLURM script
+
+Let's use blast as an example for writing our first script. Firt we need to make sure that
+the latest blast is available
+
+```
+module spider blast
+```
+
+This is the output that we get:
+
+```
+----------------------------------------------------------------------
+  blast:
+----------------------------------------------------------------------
+    Description:
+      The Basic Local Alignment Search Tool (BLAST) finds regions of
+      local similarity between sequences.
+
+     Versions:
+        blast/2.3.0+
+        blast/2.4.0+
+        blast/2.6.0+
+        blast/2.7.1+bin
+        blast/2.9.0+bin
+        blast/2.9.0+src
+        blast/2.9.0+
+        blast/2.10.0+bin
+        blast/2.10.0+src
+        blast/2.10.0
+        blast/2.11.0+bin
+        blast/2.11.0
+        blast/2.12.0+bin
+        blast/2.12.0+src
+        blast/2.13.0+bin
+     Other possible modules matches:
+        crb-blast  gcc-11.2.1/SKYLAKEX/clblast  gcc-11.2.1/SKYLAKEX/ncbi-magicblast  ...
+
+```
+
+In that case we want to use `blast/2.13.0+bin`, so let's start building the script 
+in `script.sh` file by using nano.
+
+```
+nano script.sh
+```
+
+In nano, let's add the the following lines:
+
+```
+#!/bin/bash
+#SBATCH --job-name=class_test
+#SBATCH --output=ct_output.slurm
+#SBATCH --nodes=4
+#SBATCH --tasks-per-node=32
+$SBATCH --time=00:10:00
+
+module load blast/2.13.0+bin
+
+makeblastdb -in <reference.fa> -dbtype nucl -parse_seqids -out <database_name> -title "Database title"
+```
