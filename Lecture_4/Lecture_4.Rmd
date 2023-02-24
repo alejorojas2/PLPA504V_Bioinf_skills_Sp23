@@ -140,7 +140,23 @@ git remote add origin git@github.com:alejorojas2/Test.git
 git push -u origin main
 ```
 
+## How to set up Token access in github
+
+This is probably the most easy way to set up access to github.  Here is the link with the 
+instruction to setup a [token access for github](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
+In this case you want to setup a **Personal token access**, in this case personal access tokens (classic) are less secure. Once you have a token, you can enter it instead of your password when performing Git operations over HTTPS.
+
+```
+$ git clone https://github.com/USERNAME/REPO.git
+Username: YOUR_USERNAME
+Password: YOUR_TOKEN
+```
+Personal access tokens can only be used for HTTPS Git operations. **If your repository uses an SSH remote URL, you will need to switch the remote from SSH to HTTPS.**
+
 ## How to set up SSH key for github
+
+We might run into issues with github, and we will need to set up a [SSH-Key](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/reviewing-your-ssh-keys).
 
 
 

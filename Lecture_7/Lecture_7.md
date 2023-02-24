@@ -1,14 +1,12 @@
 ---
 title: "Lecture_7"
 author: "Alejandro Rojas"
-date: "3/11/2022"
 output: 
   html_document: 
     keep_md: yes
 ---
 
-
-# QC for reads
+# Class preparation
 
 Let's start an interactive session:
 
@@ -16,7 +14,21 @@ Let's start an interactive session:
 srun --nodes=1 --ntasks-per-node=1  --cpus-per-task=8 --partition cloud72 --time=6:00:00 --pty /bin/bash
 ```
 
-Last class, we were talking about [FASTQ format](https://en.wikipedia.org/wiki/FASTQ_format).
+1. Let's get our data for the class: `git clone https://github.com/alejorojas2/PLPA504V_Bioinf_example_data.git`
+
+2. Make a directory in your home folder for `lecture_7`
+
+3. Enter that folder and create a symbolic link for our files for today's class:
+`ln -s ~/PLPA504V_Bioinf_example_data/Saccharomyces_fastq/*.fastq.gz ./`
+
+A symbolic link is just a shorcut and it has the following syntax: `ln [OPTION]... TARGET... DIRECTORY`.  In this case, we are using the parameter `-s` that from the manual says `-s, --symbolic    make symbolic links instead of hard links`
+
+After doing that, run `ls -lht` and check the contents of the folder.
+
+
+# QC for reads
+
+We are going to talk about [FASTQ format](https://en.wikipedia.org/wiki/FASTQ_format).
 
 In FASTQ files, quality values are encoded by symbols and each of those symbols represent a number between 0 - 40.
 Quality scores are provided per base, in a log-10 scaled format. The likelihood of a base call being erroneous is 10 to the power of (-Q/10) - so for a Q value of 3, you get an error rate of 1/2, for a Q value of 30, you get an error rate of 0.001, and for a Q value of 40, you get an error rate of .0001.
@@ -117,7 +129,8 @@ The command above is a single line, but since some scripts or even the monitor c
 
 Ideally, this should be run as a script submitted to __SLURM__, in that case you should create a bash script using __nano__ as follows: `nano trim_job.sh` (you can use any name). the contents of that file will be:
 
-```#!/bin/bash
+```
+#!/bin/bash
 #SBATCH --job-name=trim_jarojas
 #SBATCH --output=trim_job1.slurm
 #SBATCH --nodes=1
