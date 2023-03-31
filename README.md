@@ -17,7 +17,7 @@ __Lecture 5 and 6.__ [Writing scripts and scheduling jobs in SLURM](Lecture_6/Le
 
 __Lecture 7.__ [FASTQC and Trimmomatic](Lecture_7/Lecture_7.md)
 
-__Lecture 8.__ [Seqtk to manipulate FASTQ/A and Local BLAST](Lecture_8/Lecture_8.knit.md)
+__Lecture 8.__ [Seqtk to manipulate FASTQ/A and Local BLAST](Lecture_8/Lecture_8.md)
 
 __Lecture 9.__ [Mapping to reference genomes using BWA](Lecture_9/Lecture_9.md)
 
