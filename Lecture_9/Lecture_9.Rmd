@@ -232,26 +232,12 @@ will use the command mpileup.
 * `-o` specifies where to write the output file
 * `-f` flags the path to the reference genome
 
-
-```
-#Original
-bcftools mpileup -O b -o bcf/Sacc_bayanu.bcf \
-          -f ~/PLPA504V_Bioinf_example_data/Saccharomyces_bayanus/Sbayanus_ASM1943126v1_genomic.fna \
-          bam/Sacc_bayanu.aligned.sorted.bam
-
-bcftools mpileup -O b -o bcf/Sacc_cerevisae.bcf \
-          -f ~/PLPA504V_Bioinf_example_data/Saccharomyces_cerevisae/GCF_000146045.2_R64_genomic.fna \
-          bam/Sacc_cer.aligned.sorted.bam
-```
-
-This is the corrected version using the renamed files:
-
 ```
 #S bayanau
-bcftools mpileup -O b -o bcf/Sacc_cer.renamed.bcf -f ../data/reference/Scerevisiae_renamed.fa bam/Sacc_cer.renamed.aligned.sorted.bam
+bcftools mpileup -O b -o bcf/Sacc_cer.renamed.bcf -f ../reference/Scerevisiae_renamed.fa bam/Sacc_cer.renamed.aligned.sorted.bam
 
 #S cerevisae
-bcftools mpileup -O b -o bcf/Sacc_bayanus.renamed.bcf -f ../data/reference/Sbayanus_renamed.fa bam/Sacc_bayanu.renamed.aligned.sorted.bam
+bcftools mpileup -O b -o bcf/Sacc_bayanus.renamed.bcf -f ../reference/Sbayanus_renamed.fa bam/Sacc_bayanu.renamed.aligned.sorted.bam
 
 ```
 

@@ -122,6 +122,15 @@ spades.py -1 Sacc.R1_paired.trimmed.corr.fastq.gz -2 Sacc.R2_paired.trimmed.corr
          --careful
 ```
 
+**We can also modify the kmer**: by using the option `-k` and adding an odd number we could change the performance of the assembly:
+
+```
+spades.py -1 Sacc.R1_paired.trimmed.corr.fastq.gz -2 Sacc.R2_paired.trimmed.corr.fastq.gz \
+         -o spades-k_13 -t 6 --only-assembler \
+         -k 13
+```
+
+
 
 ### Megahit Assembly
 
@@ -134,6 +143,7 @@ module load megahit
 megahit -1 Sacc.R1_paired.trimmed.corr.fastq.gz -2 Sacc.R2_paired.trimmed.corr.fastq.gz \
          -o megahit-min-count-3-assembly/ -t 6 --min-count 3
 ```
+
 
 ## QUAST
 
@@ -153,11 +163,13 @@ Now we can run quast:
 #Loading quast  
 git clone git@github.com:ablab/quast.git
 
+#As module on the server
+module load quast/5.0.0
 
 #Running quast
 ./quast/quast.py -o quast-Screvisae-out -r ./Scerevisae_genome.fa \
       -g ./Scerevisae_genes.gff -t 6 -m 1000 \
-      -l "SPAdes-default, SPAdes-careful, MEGAHIT-min-count-3" \
+      -l "SPAdes-default, SPAdes-careful, MEGAHIT-min-count-3, SPAdes-kmer13" \
       spades-default-assembly/contigs.fasta \
       spades-careful-assembly/contigs.fasta \
       megahit-min-count-3-assembly/final.contigs.fa
