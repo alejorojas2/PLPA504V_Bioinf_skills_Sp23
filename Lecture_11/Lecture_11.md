@@ -179,7 +179,7 @@ module load quast/5.0.0
 
 #### CODE BREAKDOWN
 
-Remember the backslashes (\) don’t have anything to do with the actual command, they are just there so this is not one long line and we can copy and paste (otherwise the “enter” character that comes after them would try to execute the command on each line when pasted into our terminal.
+Remember the backslashes (\\) don’t have anything to do with the actual command, they are just there so this is not one long line and we can copy and paste (otherwise the “enter” character that comes after them would try to execute the command on each line when pasted into our terminal.
 
 * `-o` - setting the output directory
 * `-r` reference_genome - providing a fasta file of our reference genome
