@@ -161,7 +161,7 @@ Now we can run quast:
 
 ```
 #Loading quast  
-git clone git@github.com:ablab/quast.git
+git clone https://github.com/ablab/quast.git
 
 #As module on the server
 module load quast/5.0.0
